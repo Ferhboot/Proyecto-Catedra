@@ -143,10 +143,10 @@ function iniciar(){
         contral = []
         
 
-        alert("No hay cuentas");
+        
     } else {
 
-            alert("hay cuentas");
+        
 
             for (var i = 0; i < cantusuarios; i++) {  
                 
@@ -370,6 +370,7 @@ function iniciar(){
 
         document.getElementById('welcome').innerHTML = "Bienvenido " + usuario.user[usuario.posicion_actual];
         usuario.verificar_balance();
+        usuario.llenar_tablas();
 
 
     };
@@ -904,6 +905,266 @@ function iniciar(){
     }
 
  }
+
+usuario.llenar_tablas=function(){
+    document.getElementById("tabla_ingresos").innerHTML="";
+    document.getElementById("tabla_gastos").innerHTML="";
+
+    var tabla = document.getElementById("tabla_ingresos");
+    var tr = document.createElement("tr");
+    var td1 = document.createElement("td");
+    var td2 = document.createElement("td");
+    var td3 = document.createElement("td");
+    var td4 = document.createElement("td");
+
+    var th1 = document.createElement("th");
+    var th2 = document.createElement("th");
+    var th3 = document.createElement("th");
+    var th4 = document.createElement("th");
+
+    var txt1 = document.createTextNode("Fecha");
+    var txt2 = document.createTextNode("Descripción");
+    var txt3 = document.createTextNode("Monto");
+    var txt4 = document.createTextNode("Cuenta almacenada");
+
+    th1.appendChild(txt1);
+    th2.appendChild(txt2);
+    th3.appendChild(txt3);
+    th4.appendChild(txt4);
+
+    tr.appendChild(th1);
+    tr.appendChild(th2);
+    tr.appendChild(th3);
+    tr.appendChild(th4);
+
+    tabla.appendChild(tr);
+
+    var tr = document.createElement("tr");
+    var td1 = document.createElement("td");
+    var td2 = document.createElement("td");
+    var td3 = document.createElement("td");
+    var td4 = document.createElement("td");
+
+    var input1 = document.createElement("input");
+    var input2 = document.createElement("input");
+    var input3 = document.createElement("input");
+    var input4 = document.createElement("select");
+
+    input1.setAttribute("type","date");
+    input1.setAttribute("id","fecha_ingreso");
+
+    input2.setAttribute("type","text");
+    input2.setAttribute("id","descripcion_ingreso");
+
+    input3.setAttribute("type","text");
+    input3.setAttribute("id","monto_ingreso");
+    input3.setAttribute("name","monto_ingreso");
+
+    input4.setAttribute("id","slcingresos");
+
+    td1.appendChild(input1);
+    td2.appendChild(input2);
+    td3.appendChild(input3);
+    td4.appendChild(input4);
+
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    tr.appendChild(td4);
+    tabla.appendChild(tr);
+        var tabla = document.getElementById("tabla_gastos");
+    var tr = document.createElement("tr");
+    var td1 = document.createElement("td");
+    var td2 = document.createElement("td");
+    var td3 = document.createElement("td");
+    var td4 = document.createElement("td");
+
+    var th1 = document.createElement("th");
+    var th2 = document.createElement("th");
+    var th3 = document.createElement("th");
+    var th4 = document.createElement("th");
+
+    var txt1 = document.createTextNode("Fecha");
+    var txt2 = document.createTextNode("Motivo");
+    var txt3 = document.createTextNode("Monto");
+    var txt4 = document.createTextNode("Cuenta almacenada");
+
+    th1.appendChild(txt1);
+    th2.appendChild(txt2);
+    th3.appendChild(txt3);
+    th4.appendChild(txt4);
+
+    tr.appendChild(th1);
+    tr.appendChild(th2);
+    tr.appendChild(th3);
+    tr.appendChild(th4);
+
+    tabla.appendChild(tr);
+
+    var tr = document.createElement("tr");
+    var td1 = document.createElement("td");
+    var td2 = document.createElement("td");
+    var td3 = document.createElement("td");
+    var td4 = document.createElement("td");
+
+    var input1 = document.createElement("input");
+    var input2 = document.createElement("select");
+    var input3 = document.createElement("input");
+    var input4 = document.createElement("select");
+
+    input1.setAttribute("type","date");
+    input1.setAttribute("id","fecha_gasto");
+
+    input2.setAttribute("id","slcmotivo");
+    input2.setAttribute("name","slcmotivo");
+
+     var opc1 = document.createElement("option");
+     opc1.setAttribute("value","Pago de celular");
+     opc1.setAttribute("id","motivo_gasto");
+     var opc2 = document.createElement("option");
+     opc2.setAttribute("value","Pago de luz electrica");
+     opc2.setAttribute("id","motivo_gasto");
+     var opc3 = document.createElement("option");
+     opc3.setAttribute("value","Pago de agua");
+     opc3.setAttribute("id","motivo_gasto");
+     var opc4 = document.createElement("option");
+     opc4.setAttribute("value","Pago de alquiler");
+     opc4.setAttribute("id","motivo_gasto");
+     var opc5 = document.createElement("option");
+     opc5.setAttribute("value","Pago de cable");
+     opc5.setAttribute("id","motivo_gasto");
+     var opc6 = document.createElement("option");
+     opc6.setAttribute("value","Pago de educacion");
+     opc6.setAttribute("id","motivo_gasto");
+     var opc7 = document.createElement("option");
+     opc7.setAttribute("value","Supermercado");
+     opc7.setAttribute("id","motivo_gasto");
+     var opc8 = document.createElement("option");
+     opc8.setAttribute("value","Cine");
+     opc8.setAttribute("id","motivo_gasto");
+     var opc9 = document.createElement("option");
+     opc9.setAttribute("value","Discoteca");
+     opc9.setAttribute("id","motivo_gasto");
+     var opc10 = document.createElement("option");
+     opc10.setAttribute("value","Teatro");
+     opc10.setAttribute("id","motivo_gasto");
+     var opc11 = document.createElement("option");
+     opc11.setAttribute("value","Ropa");
+     opc11.setAttribute("id","motivo_gasto");
+     var opc12 = document.createElement("option");
+     opc12.setAttribute("value","Restaurante");
+     opc12.setAttribute("id","motivo_gasto");
+     var opc13 = document.createElement("option");
+     opc13.setAttribute("value","Tecnologia");
+     opc13.setAttribute("id","motivo_gasto");
+     var opc14 = document.createElement("option");
+     opc14.setAttribute("value","Mascota");
+     opc14.setAttribute("id","motivo_gasto");
+     var opc15 = document.createElement("option");
+     opc15.setAttribute("value","Gasolina");
+     opc15.setAttribute("id","motivo_gasto");
+     var opc16 = document.createElement("option");
+     opc16.setAttribute("value","Reparaciones");
+     opc16.setAttribute("id","motivo_gasto");
+
+     input2.appendChild(opc1);
+     input2.appendChild(opc2);
+     input2.appendChild(opc3);
+     input2.appendChild(opc4);
+     input2.appendChild(opc5);
+     input2.appendChild(opc6);
+     input2.appendChild(opc7);
+     input2.appendChild(opc8);
+     input2.appendChild(opc9);
+     input2.appendChild(opc10);
+     input2.appendChild(opc11);
+     input2.appendChild(opc12);
+     input2.appendChild(opc13);
+     input2.appendChild(opc14);
+     input2.appendChild(opc15);
+     input2.appendChild(opc16);
+
+     input3.setAttribute("type","text");
+     input3.setAttribute("id","monto_gasto");
+     input3.setAttribute("name","monto_gasto");
+
+     input4.setAttribute("id","slcgastos");
+
+     td1.appendChild(input1);
+     td2.appendChild(input2);
+     td3.appendChild(input3);
+     td4.appendChild(input4);
+
+     tr.appendChild(td1);
+     tr.appendChild(td2);
+     tr.appendChild(td3);
+     tr.appendChild(td4);
+     tabla.appendChild(tr);
+
+     if(usuario.numeroingresos[usuario.posicion_actual]===null){
+
+     }else{
+
+
+     for(var i=0; i< usuario.numeroingresos[usuario.posicion_actual];i++){
+        var table = document.getElementById("tabla_ingresos");
+        var tr = document.createElement("tr");
+
+        var td1 = document.createElement("td");
+        var td2 = document.createElement("td");
+        var td3 = document.createElement("td");
+        var td4 = document.createElement("td");
+
+        var text1 = document.createTextNode(usuario.fechaingreso[usuario.posicion_actual][i]);
+        var text2 = document.createTextNode(usuario.desingreso[usuario.posicion_actual][i]);
+        var text3 = document.createTextNode(usuario.montoingreso[usuario.posicion_actual][i]);
+        var text4 = document.createTextNode(usuario.cuentaingreso[usuario.posicion_actual][i]);
+
+        td1.appendChild(text1);
+        td2.appendChild(text2);
+        td3.appendChild(text3);
+        td4.appendChild(text4);
+
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        tr.appendChild(td4);
+
+        table.appendChild(tr);
+     }
+ }
+     if (usuario.numerogastos[posicion_actual]===null){
+
+     }else{
+for(var i=0; i<usuario.numerogastos[usuario.posicion_actual];i++){
+     var table = document.getElementById("tabla_gastos");
+         var tr = document.createElement("tr");
+
+        var td1 = document.createElement("td");
+        var td2 = document.createElement("td");
+        var td3 = document.createElement("td");
+        var td4 = document.createElement("td");
+
+        var text1 = document.createTextNode(usuario.fechagasto[usuario.posicion_actual][i]);
+        var text2 = document.createTextNode(usuario.desgasto[usuario.posicion_actual][i]);
+        var text3 = document.createTextNode(usuario.montogasto[usuario.posicion_actual][i]);
+        var text4 = document.createTextNode(usuario.cuentagasto[usuario.posicion_actual][i]);
+
+        td1.appendChild(text1);
+        td2.appendChild(text2);
+        td3.appendChild(text3);
+        td4.appendChild(text4);
+
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        tr.appendChild(td4);
+
+        table.appendChild(tr);
+    }
+    }
+
+}
 
 usuario.verificar_balance=function(){
     if (parseFloat(usuario.balance[usuario.posicion_actual]) > parseFloat(usuario.estadobalance[usuario.posicion_actual])){
